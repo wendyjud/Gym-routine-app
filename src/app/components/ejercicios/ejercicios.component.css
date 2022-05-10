@@ -1,0 +1,9 @@
+.container-fluid {
+    background-color: #333333;
+    height: 200vh;
+    font-family: Arial, sans-serif;
+}
+
+.card{
+    background-color: #fd7d3d;
+}
