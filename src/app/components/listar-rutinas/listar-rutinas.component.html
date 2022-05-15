@@ -1,29 +1,30 @@
 <div class="card">
     <div class="card-body">
-        <h5 class="titulo">Rutinas Creadas</h5>
+        <h3 class="titulo mb-3">Tus rutinas</h3>
         <table class="table">
             <tbody>
-                <tr>
-                    <td>Nombre</td>
-                    <td>Ejercicio y descripción</td>
-                    <td>Duración por serie</td>
-                    <td>Número de series</td>
-                    <td>Numero de repeticiones por serie</td>
-                    <td>Tiempo de descanso</td>
-                    <td>Editar   <i class="far fa-edit text-info"></i></td>
-                    <td>Eliminar <i class="fa-solid fa-trash text-danger" ></i></td>
+                <tr class="text-center">
+                    <th>Nombre</th>
+                    <th>Ejercicio y descripción</th>
+                    <th>Duración por serie</th>
+                    <th>Número de series</th>
+                    <th>Numero de repeticiones por serie</th>
+                    <th>Tiempo de descanso</th>
+                    <th>Editar  </th>
+                    <th>Eliminar </th>
                 </tr>
-                <tr>
-                    <td>Cardio</td>
-                    <td>Saltar la cuerda</td>
-                    <td>2 min</td>
-                    <td>3 series</td>
-                    <td>2 repeticiones</td>
-                    <td>1 min</td>
-                    <td>Editar   <i class="far fa-edit text-info"></i></td>
-                    <td>Eliminar <i class=" far fa-solid fa-trash text-danger" ></i></td>
+                <tr class="text-center" *ngFor="let rutina of listRutinas">
+                    <td>{{rutina.nombre}}</td>
+                    <td>{{rutina.descripcion}}</td>
+                    <td>{{rutina.duracion}}</td>
+                    <td>{{rutina.serie}}</td>
+                    <td>{{rutina.repeticion}}</td>
+                    <td>{{rutina.tiempo}}</td>
+                    <td class="text-center"> <i (click)="editarRutina(rutina)" class="far fa-edit text-info"></i></td>
+                    <td class="text-center"> <i (click)="eliminarRutina(rutina.id)" class=" far fa-solid fa-trash text-danger" ></i></td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <app-crear-rutina></app-crear-rutina>
 </div>

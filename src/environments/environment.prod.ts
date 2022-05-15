@@ -1,11 +1,11 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: "AIzaSyBCpZOAWKvvup7bO7gRHvCfXUHCpu3m2U4",
-    authDomain: "gym-routine-6f34d.firebaseapp.com",
-    projectId: "gym-routine-6f34d",
-    storageBucket: "gym-routine-6f34d.appspot.com",
-    messagingSenderId: "648186224277",
-    appId: "1:648186224277:web:786eeeac8902054b72059c"
+    apiKey: "AIzaSyD2wrgGQ4fizse1SNtKoStrPCcc7X5dYts",
+    authDomain: "gym-routine-ec70a.firebaseapp.com", 
+    projectId: "gym-routine-ec70a",
+    storageBucket: "gym-routine-ec70a.appspot.com",
+    messagingSenderId: "444824048426",
+    appId: "1:444824048426:web:e3e4903b73cb0de4208453"  
   }
 };

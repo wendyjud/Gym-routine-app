@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-
-
-
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule}from '@angular/forms'
+import { ReactiveFormsModule}from '@angular/forms';
+
+//Angular
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 
 //componentes creados
 import { RutinasComponent } from './components/rutinas/rutinas.component';
@@ -25,6 +28,13 @@ import { VerRutinasComponent } from './components/ver-rutinas/ver-rutinas.compon
 import { ListarRutinasComponent } from './components/listar-rutinas/listar-rutinas.component';
 //import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideFunctions,getFunctions } from '@angular/fire/functions';
+import { provideMessaging,getMessaging } from '@angular/fire/messaging';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 
 @NgModule({
@@ -46,8 +56,12 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     RouterModule.forRoot([
-      {path:'', component:HomeComponent},
+      {path:'', pathMatch:'full', component:HomeComponent},
       { path: 'rutinas', component: RutinasComponent },
       { path: 'ejercicios', component: EjerciciosComponent },
       { path: 'blog', component: BlogComponent },
@@ -55,7 +69,14 @@ import { environment } from '../environments/environment';
       { path: 'crear-rutina', component:CrearRutinaComponent},
       { path: 'listar-rutinas', component: ListarRutinasComponent},
       
-    ])//, provideFirebaseApp(() => initializeApp(environment.firebase)), provideAuth(() => getAuth()), provideDatabase(() => getDatabase()), provideFirestore(() => getFirestore()), providePerformance(() => getPerformance()), provideRemoteConfig(() => getRemoteConfig())
+    ]),
+    /*provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore()),
+    provideFunctions(() => getFunctions()),
+    provideMessaging(() => getMessaging()),
+    provideStorage(() => getStorage()) *///, provideFirebaseApp(() => initializeApp(environment.firebase)), provideAuth(() => getAuth()), provideDatabase(() => getDatabase()), provideFirestore(() => getFirestore()), providePerformance(() => getPerformance()), provideRemoteConfig(() => getRemoteConfig())
   ],
   providers: [],
   bootstrap: [AppComponent]

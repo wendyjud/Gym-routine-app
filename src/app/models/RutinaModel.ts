@@ -1,7 +1,7 @@
 //import { Tracing } from "trace_events";
 
 export class RutinaModel{
-    //id?:string;
+    id?:string;
     nombre: string;
     descripcion:string;
     duracion:number;

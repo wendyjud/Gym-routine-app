@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "gym-routine-ec70a": {
+      "hosting": {
+        "gym-routine": [
+          "gym-routine-ec70a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "gym-routine-ec70a"
+  }
+}

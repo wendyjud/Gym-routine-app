@@ -5,8 +5,8 @@
             <br>
             <div class="card">
                 <div class="card-body">
-                    <h1>Crear rutina</h1>
-                    <form [formGroup]="form" (ngSubmit)="crearRutina()"> 
+                    <h3 class="titulo mb-3">{{titulo | uppercase}}</h3>
+                    <form [formGroup]="form" (ngSubmit)="guardarRutina()"> 
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Nombre del ejercicio:</label>
                         <input type="text " formControlName="nombre" class="form-control" id="nombre" placeholder="nombre del ejercicio">
@@ -49,4 +49,6 @@
         </div>
     </div>
 </div><br>
+
+
 </div>
