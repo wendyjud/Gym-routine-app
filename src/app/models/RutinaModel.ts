@@ -20,3 +20,27 @@ export class RutinaModel{
     }
 
 }
+
+export class RapidaModel{
+    id?:string;
+    categoria: string;
+    nombre:string;
+    descripcion:string;
+    img: string;
+    recomendacion: string;
+    
+    constructor(categoria: string,
+        nombre:string,
+        descripcion:string,
+        img: string,
+        recomendacion: string){
+        //this.categoria=categoria;
+        this.categoria=categoria;
+        this.nombre=nombre;
+        this.descripcion=descripcion;
+        this.img=img;
+        this.recomendacion=recomendacion;
+     
+    }
+
+}

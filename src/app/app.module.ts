@@ -24,7 +24,7 @@ import { HomeComponent } from './components/home/home.component';
 
 import { RouterModule } from '@angular/router';
 import { CrearRutinaComponent } from './components/crear-rutina/crear-rutina.component';
-import { VerRutinasComponent } from './components/ver-rutinas/ver-rutinas.component';
+
 import { ListarRutinasComponent } from './components/listar-rutinas/listar-rutinas.component';
 //import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
@@ -35,6 +35,13 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideFunctions,getFunctions } from '@angular/fire/functions';
 import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+
+import { QuemagrasaComponent } from './components/rutinas/rutinas_rapidas/quemagrasa/quemagrasa.component';
+import { PiernaYGlueteoComponent } from './components/rutinas/rutinas_rapidas/pierna-y-glueteo/pierna-y-glueteo.component';
+import { CardioEnCasaComponent } from './components/rutinas/rutinas_rapidas/cardio-en-casa/cardio-en-casa.component';
+import { AbdominalesComponent } from './components/rutinas/rutinas_rapidas/abdominales/abdominales.component';
+import { CinturaComponent } from './components/rutinas/rutinas_rapidas/cintura/cintura.component';
+import { RetosComponent } from './components/rutinas/retos/retos.component';
 
 
 @NgModule({
@@ -47,8 +54,14 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     IniciarSesionComponent,
     HomeComponent,
     CrearRutinaComponent,
-    VerRutinasComponent,
-    ListarRutinasComponent
+   
+    ListarRutinasComponent,
+         QuemagrasaComponent,
+         PiernaYGlueteoComponent,
+         CardioEnCasaComponent,
+         AbdominalesComponent,
+         CinturaComponent,
+         RetosComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +81,13 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
       { path: 'inicio-sesion', component: IniciarSesionComponent },
       { path: 'crear-rutina', component:CrearRutinaComponent},
       { path: 'listar-rutinas', component: ListarRutinasComponent},
+
+      { path: 'quemagrasa', component: QuemagrasaComponent},
+      { path: 'pierna-y-gluteo', component:PiernaYGlueteoComponent},
+      { path: 'cardio-en-casa', component:CardioEnCasaComponent},
+      { path: 'abdominales', component:AbdominalesComponent},
+      
+      {path: 'retos', component:RetosComponent},
       
     ]),
     /*provideFirebaseApp(() => initializeApp(environment.firebase)),

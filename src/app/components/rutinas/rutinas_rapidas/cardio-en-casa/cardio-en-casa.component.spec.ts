@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VerRutinasComponent } from './ver-rutinas.component';
+import { CardioEnCasaComponent } from './cardio-en-casa.component';
 
-describe('VerRutinasComponent', () => {
-  let component: VerRutinasComponent;
-  let fixture: ComponentFixture<VerRutinasComponent>;
+describe('CardioEnCasaComponent', () => {
+  let component: CardioEnCasaComponent;
+  let fixture: ComponentFixture<CardioEnCasaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VerRutinasComponent ]
+      declarations: [ CardioEnCasaComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VerRutinasComponent);
+    fixture = TestBed.createComponent(CardioEnCasaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

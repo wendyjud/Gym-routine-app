@@ -33,4 +33,23 @@ export class RutinaService {
   getRutinaEdit(): Observable<RutinaModel>{
     return this.rutina$.asObservable();
   }
+  obtenerRapidas():Observable<any>{
+    return  this.firestore.collection('rapidas', ref=>ref.orderBy('nombre', 'asc')).snapshotChanges();
+ 
+   }
+
+   obtenerPyg():Observable<any>{
+    return  this.firestore.collection('pyg', ref=>ref.orderBy('nombre', 'asc')).snapshotChanges();
+ 
+   }
+
+   obtenerCardioc():Observable<any>{
+    return  this.firestore.collection('cardio_casa', ref=>ref.orderBy('nombre', 'asc')).snapshotChanges();
+ 
+   }
+
+   obtenerAbdominales():Observable<any>{
+    return  this.firestore.collection('abdominales', ref=>ref.orderBy('nombre', 'asc')).snapshotChanges();
+ 
+   }
 }
