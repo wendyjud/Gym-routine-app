@@ -52,4 +52,10 @@ export class RutinaService {
     return  this.firestore.collection('abdominales', ref=>ref.orderBy('nombre', 'asc')).snapshotChanges();
  
    }
+   obtenerRetos():Observable<any>{
+    return  this.firestore.collection('retos', ref=>ref.orderBy('reto', 'desc')).snapshotChanges();
+ 
+   }
+
+   
 }

@@ -1,0 +1,22 @@
+<div class="container-fluid">
+<div class="row " >
+
+    <div class="card "  *ngFor="let pectoral of listEjercicios" style="max-width: 28rem;">
+        <div class="col-sm-12 ">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{pectoral.ejercicio}}</h5>
+          <img src="{{pectoral.img}}" class="card-img-top " with= "100px" height="170px" alt="...">
+          <h6 class="card-title text-center">Ejecución del ejercicio</h6>
+          <p>{{pectoral.indicacion}} </p>
+          <p class="card-text">{{pectoral.pasos}}</p>
+        </div>
+        <div class="card-body text-center">
+            <a href="{{pectoral.link}}" class="btn btn-primary">Ver Vídeo</a>
+        </div>
+      </div>
+</div>
+
+
+</div>
+</div>
+ 

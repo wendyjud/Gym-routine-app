@@ -43,4 +43,39 @@ export class RapidaModel{
      
     }
 
+
+
+}
+
+export class RetoModel{
+    id?:string;
+    numRet: string;
+    reto: string;
+    descripcion:string;
+    dias:number;
+
+
+    constructor(numRet: string, reto: string, descripcion:string, dias:number){
+        this.numRet=numRet;
+        this.reto=reto;
+        this.descripcion=descripcion;
+        this.dias=dias;
+ 
+    }
+
+}
+
+export class PectoralesModel{
+    id?:string;
+    name: string;
+    descripcion:string;
+
+
+
+    constructor(name: string, descripcion:string){
+        this.name=name;
+        this.descripcion=descripcion;
+ 
+    }
+
 }

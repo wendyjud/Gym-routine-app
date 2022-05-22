@@ -1,0 +1,17 @@
+.container-fluid{
+    background-color: #ffffff10;
+}
+
+.row{
+    background-color: rgba(255, 149, 0, 0.694);
+
+}
+.btn-primary{
+
+    background-color: #fd7d3d;
+}
+
+a:hover{
+    color: rgb(0, 0, 0) !important;
+    background-color: #fd7d3d !important;
+    }

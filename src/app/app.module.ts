@@ -28,6 +28,7 @@ import { CrearRutinaComponent } from './components/crear-rutina/crear-rutina.com
 import { ListarRutinasComponent } from './components/listar-rutinas/listar-rutinas.component';
 //import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
+
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
@@ -42,6 +43,7 @@ import { CardioEnCasaComponent } from './components/rutinas/rutinas_rapidas/card
 import { AbdominalesComponent } from './components/rutinas/rutinas_rapidas/abdominales/abdominales.component';
 import { CinturaComponent } from './components/rutinas/rutinas_rapidas/cintura/cintura.component';
 import { RetosComponent } from './components/rutinas/retos/retos.component';
+import { PectoralesComponent } from './components/ejercicios/pectorales/pectorales.component';
 
 
 @NgModule({
@@ -61,7 +63,8 @@ import { RetosComponent } from './components/rutinas/retos/retos.component';
          CardioEnCasaComponent,
          AbdominalesComponent,
          CinturaComponent,
-         RetosComponent
+         RetosComponent,
+         PectoralesComponent
   ],
   imports: [
     BrowserModule,
@@ -88,6 +91,8 @@ import { RetosComponent } from './components/rutinas/retos/retos.component';
       { path: 'abdominales', component:AbdominalesComponent},
       
       {path: 'retos', component:RetosComponent},
+
+      {path: 'pectorales', component:PectoralesComponent}
       
     ]),
     /*provideFirebaseApp(() => initializeApp(environment.firebase)),
