@@ -84,7 +84,7 @@ id: string | undefined;
     //console.log(RUTINA);
     this._rutinaService.guardarRutina(RUTINA).then(()=>{
       console.log('Rutina Registrada');
-      this.toastr.success('La rutina fue registrada con éxito', 'tarjeta registrada')
+      this.toastr.success('La rutina fue registrada con éxito', 'Rutina registrada')
       this.form.reset();
     }, error => {
       this.toastr.error('Opps!, algo salió mal', 'Inténtalo de nuevo');

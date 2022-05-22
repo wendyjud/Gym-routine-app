@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule}from '@angular/forms';
 
+
 //Angular
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
@@ -44,6 +45,9 @@ import { AbdominalesComponent } from './components/rutinas/rutinas_rapidas/abdom
 import { CinturaComponent } from './components/rutinas/rutinas_rapidas/cintura/cintura.component';
 import { RetosComponent } from './components/rutinas/retos/retos.component';
 import { PectoralesComponent } from './components/ejercicios/pectorales/pectorales.component';
+import { RegisterComponent } from './components/register/register.component';
+import { HotToastModule } from '@ngneat/hot-toast';
+
 
 
 @NgModule({
@@ -64,7 +68,8 @@ import { PectoralesComponent } from './components/ejercicios/pectorales/pectoral
          AbdominalesComponent,
          CinturaComponent,
          RetosComponent,
-         PectoralesComponent
+         PectoralesComponent,
+         RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -75,13 +80,17 @@ import { PectoralesComponent } from './components/ejercicios/pectorales/pectoral
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     BrowserAnimationsModule,
+
+    HotToastModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot([
-      {path:'', pathMatch:'full', component:HomeComponent},
+      {path:'home', component:HomeComponent},
       { path: 'rutinas', component: RutinasComponent },
       { path: 'ejercicios', component: EjerciciosComponent },
       { path: 'blog', component: BlogComponent },
       { path: 'inicio-sesion', component: IniciarSesionComponent },
+      { path: 'register', component:RegisterComponent},
+      
       { path: 'crear-rutina', component:CrearRutinaComponent},
       { path: 'listar-rutinas', component: ListarRutinasComponent},
 
@@ -95,13 +104,9 @@ import { PectoralesComponent } from './components/ejercicios/pectorales/pectoral
       {path: 'pectorales', component:PectoralesComponent}
       
     ]),
-    /*provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    provideDatabase(() => getDatabase()),
-    provideFirestore(() => getFirestore()),
-    provideFunctions(() => getFunctions()),
-    provideMessaging(() => getMessaging()),
-    provideStorage(() => getStorage()) *///, provideFirebaseApp(() => initializeApp(environment.firebase)), provideAuth(() => getAuth()), provideDatabase(() => getDatabase()), provideFirestore(() => getFirestore()), providePerformance(() => getPerformance()), provideRemoteConfig(() => getRemoteConfig())
+    HotToastModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

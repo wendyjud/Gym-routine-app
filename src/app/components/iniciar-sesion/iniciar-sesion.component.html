@@ -10,23 +10,24 @@
                     <div class="caja__trasera-register">
                         <h3>¿Aún no tienes una cuenta?</h3>
                         <p>Regístrate para que puedas iniciar sesión</p>
-                        <button id="btn__registrarse">Regístrarse</button>
+                        <button routerLink="/register" id="btn__registrarse">Regístrarse</button>
                     </div>
                 </div>
 
                 <!--Formulario de Login y registro-->
                 <div class="contenedor__login-register">
                     <!--Login-->
-                    <form action="" method="" class="formulario__login">
+                    <form [formGroup]="loginForm" (ngSubmit)="submit()" class="formulario__login">
                         <h2>Iniciar Sesión</h2>
-                        <input type="text" placeholder="Usuario" name="usuario">
-                        <input type="password" placeholder="Contraseña" name="contrasena">
+                        <input type="text" placeholder="Email" name="usuario" formControlName="email">
+                    
+                        <input type="password" placeholder="Contraseña" name="contrasena" formControlName="password">
                         <input type="submit" name="loguearse" value="Entrar" style="color:black; height:60px; width:300px">
                         
                     </form>
 
                     <!--Register-->
-                    <form action=" " method=" " class="formulario__register">
+                    <form  [formGroup]="loginForm" class="formulario__register">
                         <h2>Regístrarse</h2>
                         <input type="text" placeholder="Nombre(s)" name="nombre" required>
                         <input type="text" placeholder="Apellido paterno" name="paterno" required>

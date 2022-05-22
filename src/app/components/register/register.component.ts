@@ -1,7 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
+import { ToastrService } from 'ngx-toastr';
 import { UserService } from 'src/app/services/user.service';
+
+export function passwordMatchValidator():ValidatorFn{
+  return (control:AbstractControl):ValidationErrors | null =>{
+    const password = control.get('password')?.value;
+    const confirmPassword = control.get('confirmPassword')?.value;
+    if (password && confirmPassword && password !==confirmPassword){
+      return{
+        passwordsDonMatch: true
+      }
+    }
+    return null;
+  };
+}
 
 @Component({
   selector: 'app-register',
@@ -9,29 +24,43 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  signUpForm = new FormGroup ({ 
+    name: new FormControl ('', Validators.required),
+    email: new FormControl ('',[Validators.email, Validators.required]),
+    password: new FormControl('', Validators.required),
+    confirmPassword:new FormControl('', Validators.required)
+  },
+  {validators: passwordMatchValidator()}
+  );
 
-  formReg: FormGroup;
+  constructor(private userService: UserService,private toast: HotToastService, private router: Router ) { }
 
-  constructor(
-    private userService: UserService,
-    private router: Router
-  ) {
-    this.formReg = new FormGroup({
-      email: new FormControl(),
-      password: new FormControl()
-    })
+  ngOnInit():void{}
+
+  get name(){
+    return this.signUpForm.get('name');
   }
-
-  ngOnInit(): void {
+  get email(){
+    return this.signUpForm.get('email');
   }
-
-  onSubmit() {
-    this.userService.register(this.formReg.value)
-      .then(response => {
-        console.log(response);
-        this.router.navigate(['/login']);
+  get password(){
+    return this.signUpForm.get('password');
+  }
+  get confirmPassword(){
+    return this.signUpForm.get('confirmPassword');
+  }
+  submit(){
+    if(this.signUpForm.valid) return;
+    const{name, email, password}=this.signUpForm.value;
+    this.userService.signUp(name, email, password).pipe(
+      this.toast.observe({
+          success:'Has ingresado correctamente',
+          loading: 'Iniciando sesion',
+          error:(err)=>`${err?.message}`
       })
-      .catch(error => console.log(error));
+    ).subscribe(()=>{
+      this.router.navigate(['/blog']);
+    })
   }
 
 }
