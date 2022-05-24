@@ -124,7 +124,9 @@ input[type="submit"]{
     outline: none;
 }
 
-
+.msj-errores{
+    color:#fd4646;
+}
 
 
 .formulario__login{
@@ -166,6 +168,5 @@ input[type="submit"]{
 
     .contenedor__login-register form{
         position: relative;
-        
     }
 }

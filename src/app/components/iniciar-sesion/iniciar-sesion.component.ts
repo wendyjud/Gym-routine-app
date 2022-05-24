@@ -37,7 +37,7 @@ export class IniciarSesionComponent implements OnInit {
       })
     )
     .subscribe(()=>{
-      this.router.navigate(['/crear-rutina']);
+      this.router.navigate(['/home']);
     })
    }return;
     //this.toastr.error('Opps!, algo salió mal', 'Inténtalo de nuevo');

@@ -49,6 +49,7 @@ export class RegisterComponent implements OnInit {
   get confirmPassword(){
     return this.signUpForm.get('confirmPassword');
   }
+  
   submit(){
     if(this.signUpForm.valid) return;
     const{name, email, password}=this.signUpForm.value;

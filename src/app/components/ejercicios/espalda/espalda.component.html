@@ -1,0 +1,18 @@
+<div class="container-fluid ">
+  <div class="row">
+      <h1 class="text-center mt-3 titulo" >Ejercicios de Espalda</h1>
+        <div class="card text-center mx-2 my-2" *ngFor="let espalda of listEjercicios" style="max-width: 28rem;">
+          <div class="card-body">
+            <h2 class="card-title"><strong>{{espalda.ejercicio}}</strong></h2>
+            <img src="{{espalda.img}}" class="card-img-top img-fluid" max-with= "50px" max-height="100px" alt="...">
+            <h4 class="card-subtitle mb-2 text-muted text-center">Ejecución del Ejercicio</h4>
+            <p class="card-text">{{espalda.indicacion}} </p>
+            <p class="card-text text-justify">{{espalda.pasos}}</p>
+            <a href="{{espalda.link}}" class="btn btn-primary">Ver Vídeo</a>
+          </div>
+        </div>
+    
+    </div>
+</div>
+
+   

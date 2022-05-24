@@ -32,11 +32,7 @@ import { environment } from '../environments/environment';
 
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideDatabase,getDatabase } from '@angular/fire/database';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { provideFunctions,getFunctions } from '@angular/fire/functions';
-import { provideMessaging,getMessaging } from '@angular/fire/messaging';
-import { provideStorage,getStorage } from '@angular/fire/storage';
+
 
 import { QuemagrasaComponent } from './components/rutinas/rutinas_rapidas/quemagrasa/quemagrasa.component';
 import { PiernaYGlueteoComponent } from './components/rutinas/rutinas_rapidas/pierna-y-glueteo/pierna-y-glueteo.component';
@@ -47,6 +43,16 @@ import { RetosComponent } from './components/rutinas/retos/retos.component';
 import { PectoralesComponent } from './components/ejercicios/pectorales/pectorales.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HotToastModule } from '@ngneat/hot-toast';
+import { RestriccionesGuard } from './guards/restricciones.guard';
+import { PiernaComponent } from './components/ejercicios/pierna/pierna.component';
+import { TricepsComponent } from './components/ejercicios/triceps/triceps.component';
+import { AbdomenComponent } from './components/ejercicios/abdomen/abdomen.component';
+import { AntebrazoComponent } from './components/ejercicios/antebrazo/antebrazo.component';
+import { BicepsComponent } from './components/ejercicios/biceps/biceps.component';
+import { GluteosComponent } from './components/ejercicios/gluteos/gluteos.component';
+import { EspaldaComponent } from './components/ejercicios/espalda/espalda.component';
+import { EstiramientosComponent } from './components/estiramientos/estiramientos.component';
+
 
 
 
@@ -69,7 +75,17 @@ import { HotToastModule } from '@ngneat/hot-toast';
          CinturaComponent,
          RetosComponent,
          PectoralesComponent,
-         RegisterComponent
+         RegisterComponent,
+         PiernaComponent,
+         TricepsComponent,
+         AbdomenComponent,
+         AntebrazoComponent,
+         BicepsComponent,
+         GluteosComponent,
+         EspaldaComponent,
+         EstiramientosComponent,
+      
+         
   ],
   imports: [
     BrowserModule,
@@ -81,9 +97,11 @@ import { HotToastModule } from '@ngneat/hot-toast';
     AngularFirestoreModule,
     BrowserAnimationsModule,
 
+
     HotToastModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot([
+      {path: '', redirectTo: '/home', pathMatch: 'full'},
       {path:'home', component:HomeComponent},
       { path: 'rutinas', component: RutinasComponent },
       { path: 'ejercicios', component: EjerciciosComponent },
@@ -91,8 +109,8 @@ import { HotToastModule } from '@ngneat/hot-toast';
       { path: 'inicio-sesion', component: IniciarSesionComponent },
       { path: 'register', component:RegisterComponent},
       
-      { path: 'crear-rutina', component:CrearRutinaComponent},
-      { path: 'listar-rutinas', component: ListarRutinasComponent},
+      { path: 'crear-rutina', component:CrearRutinaComponent, canActivate:[RestriccionesGuard]},
+      { path: 'listar-rutinas', component: ListarRutinasComponent, canActivate:[RestriccionesGuard]},
 
       { path: 'quemagrasa', component: QuemagrasaComponent},
       { path: 'pierna-y-gluteo', component:PiernaYGlueteoComponent},
@@ -100,8 +118,17 @@ import { HotToastModule } from '@ngneat/hot-toast';
       { path: 'abdominales', component:AbdominalesComponent},
       
       {path: 'retos', component:RetosComponent},
+      {path: 'estiramientos',component:EstiramientosComponent},
 
-      {path: 'pectorales', component:PectoralesComponent}
+      {path: 'pectorales', component:PectoralesComponent},
+      {path: 'antebrazo', component:AntebrazoComponent},
+      {path: 'abdomen', component:AbdomenComponent },
+      {path: 'biceps', component: BicepsComponent},
+      {path: 'espalda', component: EspaldaComponent },
+      {path: 'gluetos', component:GluteosComponent },
+      {path: 'pectorales', component: PectoralesComponent},
+      {path: 'pierna', component:PiernaComponent },
+      {path: 'triceps', component: TricepsComponent},
       
     ]),
     provideFirebaseApp(() => initializeApp(environment.firebase)),

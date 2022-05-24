@@ -1,11 +1,4 @@
 
-
-.container-fluid {
-    background-color: #333333;
-    height: 200vh;
-    font-family: Arial, sans-serif;
-}
- 
 a:hover{
     color: rgb(0, 0, 0) !important;
     background-color: #fd7d3d !important;
@@ -37,6 +30,13 @@ a:hover{
     }
     .container-fluid {
         background-color: #333333;
-        height: 100vh;
-        font-family: Arial, sans-serif;
+        height: 145vh;
+        
     }
+
+    .letra{
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: medium;
+  }
+
+ 

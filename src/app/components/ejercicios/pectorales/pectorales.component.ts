@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
 import { EjercicioModel } from 'src/app/models/EjercicioModel';
 import { EjerciciosService } from 'src/app/services/ejercicios.service';
 

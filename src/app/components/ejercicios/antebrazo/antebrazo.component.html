@@ -1,0 +1,18 @@
+<div class="container-fluid ">
+  <div class="row">
+      <h1 class="text-center mt-3 titulo" >Ejercicios de Antebrazo</h1>
+        <div class="card text-center mx-2 my-2" *ngFor="let antebrazo of listEjercicios" style="max-width: 28rem;">
+          <div class="card-body">
+            <h2 class="card-title"><strong>{{antebrazo.ejercicio}}</strong></h2>
+            <img src="{{antebrazo.img}}" class="card-img-top img-fluid" max-with= "50px" max-height="100px" alt="...">
+            <h4 class="card-subtitle mb-2 text-muted text-center">Ejecución del Ejercicio</h4>
+            <p class="card-text">{{antebrazo.indicacion}} </p>
+            <p class="card-text text-justify">{{antebrazo.pasos}}</p>
+            <a href="{{antebrazo.link}}" class="btn btn-primary">Ver Vídeo</a>
+          </div>
+        </div>
+    
+    </div>
+</div>
+
+     

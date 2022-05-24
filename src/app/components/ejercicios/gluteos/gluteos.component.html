@@ -1,0 +1,16 @@
+<div class="container-fluid ">
+    <div class="row">
+        <h1 class="text-center mt-3 titulo" >Ejercicios de Glúteos</h1>
+          <div class="card text-center mx-2 my-2" *ngFor="let gluteos of listEjercicios" style="max-width: 28rem;">
+            <div class="card-body">
+              <h2 class="card-title"><strong>{{gluteos.ejercicio}}</strong></h2>
+              <img src="{{gluteos.img}}" class="card-img-top img-fluid" max-with= "50px" max-height="100px" alt="...">
+              <h4 class="card-subtitle mb-2 text-muted text-center">Ejecución del Ejercicio</h4>
+              <p class="card-text">{{gluteos.indicacion}} </p>
+              <p class="card-text text-justify">{{gluteos.pasos}}</p>
+              <a href="{{gluteos.link}}" class="btn btn-primary">Ver Vídeo</a>
+            </div>
+          </div>
+      
+      </div>
+</div>

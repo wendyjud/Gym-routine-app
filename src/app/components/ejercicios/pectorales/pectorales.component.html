@@ -1,22 +1,18 @@
-<div class="container-fluid">
-<div class="row " >
-
-    <div class="card "  *ngFor="let pectoral of listEjercicios" style="max-width: 28rem;">
-        <div class="col-sm-12 ">
-        <div class="card-body">
-          <h5 class="card-title text-center">{{pectoral.ejercicio}}</h5>
-          <img src="{{pectoral.img}}" class="card-img-top " with= "100px" height="170px" alt="...">
-          <h6 class="card-title text-center">Ejecución del ejercicio</h6>
-          <p>{{pectoral.indicacion}} </p>
-          <p class="card-text">{{pectoral.pasos}}</p>
+<div class="container-fluid ">
+  <div class="row">
+      <h1 class="text-center mt-3 titulo" >Ejercicios de Pectorales</h1>
+        <div class="card text-center mx-2 my-2" *ngFor="let pectorales of listEjercicios" style="max-width: 28rem;">
+          <div class="card-body">
+            <h2 class="card-title"><strong>{{pectorales.ejercicio}}</strong></h2>
+            <img src="{{pectorales.img}}" class="card-img-top img-fluid" max-with= "50px" max-height="100px" alt="...">
+            <h4 class="card-subtitle mb-2 text-muted text-center">Ejecución del Ejercicio</h4>
+            <p class="card-text">{{pectorales.indicacion}} </p>
+            <p class="card-text text-justify">{{pectorales.pasos}}</p>
+            <a href="{{pectorales.link}}" class="btn btn-primary">Ver Vídeo</a>
+          </div>
         </div>
-        <div class="card-body text-center">
-            <a href="{{pectoral.link}}" class="btn btn-primary">Ver Vídeo</a>
-        </div>
-      </div>
+    
+    </div>
 </div>
 
-
-</div>
-</div>
  

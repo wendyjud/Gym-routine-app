@@ -1,7 +1,7 @@
-<div class="container-fluid">
+<div class="container-fluid ">
     <br>
-               <div class="contenedor__todo">
-                   <div class="caja__trasera">
+               <div class="contenedor__todo my-5">
+                   <div class="caja__trasera my-5">
                        <div class="caja__trasera-register">
                            <h3>¿Ya tienes una cuenta?</h3>
                            <p>Inicia sesión para entrar en la página</p>
@@ -17,18 +17,18 @@
                        <form  [formGroup]="signUpForm" (ngSubmit)="submit()" class="">
                            <h2>Regístrarse</h2>
                            <input type="text" placeholder="Nombre" name="name" required formControlName="name">
-                           <div class="msj-errores" *ngIf="name?.errors?.['required']">Se requiere de un nombre </div>
+                           <div class="msj-errores" *ngIf="name?.errors?.['required']">Se requiere de un nombre*</div>
                            <input type="text" placeholder="Correo Electronico" name="correo" required formControlName="email">
 
-                           <div class="msj-errores" *ngIf="email?.errors?.['required']">Se requiere de un correo </div>
+                           <div class="msj-errores" *ngIf="email?.errors?.['required']">Se requiere de un correo* </div>
                            <input type="password" placeholder="Contraseña" name="contrasena" required formControlName="password">
 
-                           <div class="msj-errores" *ngIf="password?.errors?.['required']">Se requiere de una contraseña </div>
+                           <div class="msj-errores" *ngIf="password?.errors?.['required']">Se requiere de una contraseña* </div>
                            <input type="password" placeholder="Contraseña de confirmación" name="confirmacion" required formControlName="confirmPassword">
                            <!--<button>Regístrarse</button> -->
-                           <div class="msj-errores" *ngIf="confirmPassword?.errors?.['required']">Se requiere de una confirmación </div>
+                           <div class="msj-errores" *ngIf="confirmPassword?.errors?.['required']">Se requiere de una confirmación* </div>
 
-                           <div class="msj-errores" *ngIf="signUpForm.errors?.['passwordsDontMatch']">Las contraseñas no coinciden </div>
+                           <div class="msj-errores" *ngIf="signUpForm.errors?.['passwordsDontMatch']">Las contraseñas no coinciden* </div>
                            <input type="submit" name="registrarse" value="Registrarse" style="color:black; height:60px; width:300px">
                        </form>
                    </div>
